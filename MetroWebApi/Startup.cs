@@ -14,8 +14,8 @@ using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.OpenApi.Models;
 using MetroWebApi.Models;
-using Microsoft.AspNetCore.Identity;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace MetroWebApi
 {
@@ -35,14 +35,37 @@ namespace MetroWebApi
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")
                    ));
-            //services.AddIdentity<User, IdentityRole>()
-                //.AddEntityFrameworkStores<ApplicationContext>();
+
+            #region JWTSettings
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                            // укзывает, будет ли валидироваться издатель при валидации токена
+                            ValidateIssuer = true,
+                            // строка, представляющая издателя
+                            ValidIssuer = AuthOptions.ISSUER,
+
+                            // будет ли валидироваться потребитель токена
+                            ValidateAudience = true,
+                            // установка потребителя токена
+                            ValidAudience = AuthOptions.AUDIENCE,
+                            // будет ли валидироваться время существования
+                            ValidateLifetime = true,
+                            // установка ключа безопасности
+                            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                            // валидация ключа безопасности
+                            ValidateIssuerSigningKey = true,
+                    };
+                });
+            #endregion
+
             services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1"});               
-            });
+            services.AddSwaggerDocumentation();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,20 +74,18 @@ namespace MetroWebApi
            
             if (env.IsDevelopment())
             {
+                app.UseSwaggerDocumentation();
                 app.UseDeveloperExceptionPage();
             }
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My v1  API");
-            });
+            
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-           // app.UseAuthentication();
             app.UseAuthorization();
+            app.UseAuthentication();
+            
 
             app.UseEndpoints(endpoints =>
             {

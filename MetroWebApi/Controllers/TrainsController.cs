@@ -6,10 +6,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MetroWebApi.Models;
+using MetroWebApi.Controllers;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MetroWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/trains")]
     [ApiController]
     public class TrainsController : ControllerBase
     {
@@ -20,17 +24,21 @@ namespace MetroWebApi.Controllers
             _context = context;
         }
 
-        // GET: api/Trains
+        // GET: api/trains
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Train>>> GetTrainItems()
         {
-            return await _context.Trains.ToListAsync();
+            
+             return await _context.Trains.ToListAsync();
+                               
         }
 
-        // GET: api/Trains/5
+        // GET: api/trains/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Train>> GetTrain(int id)
         {
+            
             var train = await _context.Trains.FindAsync(id);
 
             if (train == null)
@@ -48,7 +56,7 @@ namespace MetroWebApi.Controllers
             return train;
         }*/
 
-        // PUT: api/Trains/5
+        // PUT: api/trains/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
@@ -80,7 +88,7 @@ namespace MetroWebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Trains
+        // POST: api/trains
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
@@ -93,7 +101,7 @@ namespace MetroWebApi.Controllers
             return CreatedAtAction(nameof(GetTrain), new { id = train.Id }, train);
         }
 
-        // DELETE: api/Trains/5
+        // DELETE: api/trains/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Train>> DeleteTrain(int id)
         {
