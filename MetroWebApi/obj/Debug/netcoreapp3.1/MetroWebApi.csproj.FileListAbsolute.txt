@@ -795,3 +795,6 @@ C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\n
 C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

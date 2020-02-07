@@ -30,7 +30,7 @@ namespace MetroWebApi
 
                 try
                 {
-                    var context = services.GetRequiredService<TrainContext>();
+                    var context = services.GetRequiredService<MetroContext>();
                     //context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }

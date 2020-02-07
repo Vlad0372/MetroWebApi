@@ -17,9 +17,9 @@ namespace MetroWebApi.Controllers
     [ApiController]
     public class TrainsController : ControllerBase
     {
-        private readonly TrainContext _context;
+        private readonly MetroContext _context;
 
-        public TrainsController(TrainContext context)
+        public TrainsController(MetroContext context)
         {
             _context = context;
         }

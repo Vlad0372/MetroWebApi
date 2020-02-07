@@ -33,7 +33,7 @@ namespace MetroWebApi
            
 
             #region DBcontext
-            services.AddDbContext<TrainContext>(options =>
+            services.AddDbContext<MetroContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")
                    ));

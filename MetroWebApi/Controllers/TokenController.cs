@@ -30,7 +30,7 @@ namespace MetroWebApi.Controllers
                 if (user != null)
                 {
                     var tokenString = BuildToken(user);
-                    response = Ok(new { token = tokenString });
+                    response = Ok(new { token = "Bearer " + tokenString });
                 }
 
                 return response;

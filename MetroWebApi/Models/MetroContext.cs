@@ -7,9 +7,9 @@ using MetroWebApi.Data;
 
 namespace MetroWebApi.Models
 {
-    public class TrainContext : DbContext
+    public class MetroContext : DbContext
     {
-        public TrainContext(DbContextOptions<TrainContext> options)
+        public MetroContext(DbContextOptions<MetroContext> options)
            : base(options)
         {
         }

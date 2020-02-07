@@ -9,7 +9,7 @@ namespace MetroWebApi.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(TrainContext context)
+        public static void Initialize(MetroContext context)
         {
             context.Database.EnsureCreated();
             context.Database.ExecuteSqlCommand("TRUNCATE TABLE Trains");
