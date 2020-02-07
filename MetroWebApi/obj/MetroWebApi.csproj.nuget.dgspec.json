@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj": {}
+    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj": {
+    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj",
         "projectName": "MetroWebApi",
-        "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj",
-        "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi\\obj\\",
+        "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj",
+        "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroRepository\\MetroWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

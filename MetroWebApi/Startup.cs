@@ -9,13 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using Swashbuckle.AspNetCore.Swagger;
-using Microsoft.OpenApi.Models;
 using MetroWebApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 namespace MetroWebApi
 {
@@ -31,36 +30,31 @@ namespace MetroWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
+
+            #region DBcontext
             services.AddDbContext<TrainContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")
                    ));
-
-            #region JWTSettings
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.RequireHttpsMetadata = false;
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                            // укзывает, будет ли валидироваться издатель при валидации токена
-                            ValidateIssuer = true,
-                            // строка, представляющая издателя
-                            ValidIssuer = AuthOptions.ISSUER,
-
-                            // будет ли валидироваться потребитель токена
-                            ValidateAudience = true,
-                            // установка потребителя токена
-                            ValidAudience = AuthOptions.AUDIENCE,
-                            // будет ли валидироваться время существования
-                            ValidateLifetime = true,
-                            // установка ключа безопасности
-                            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-                            // валидация ключа безопасности
-                            ValidateIssuerSigningKey = true,
-                    };
-                });
             #endregion
+
+            #region Jwt
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                 .AddJwtBearer(options =>
+                 {
+                     options.TokenValidationParameters = new TokenValidationParameters
+                     {
+                         ValidateIssuer = true,
+                         ValidateAudience = true,
+                         ValidateLifetime = true,
+                         ValidateIssuerSigningKey = true,
+                         ValidIssuer = Configuration["Jwt:Issuer"],
+                         ValidAudience = Configuration["Jwt:Issuer"],
+                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                     };
+                 });
+#endregion
 
             services.AddControllers();
 
@@ -83,10 +77,9 @@ namespace MetroWebApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

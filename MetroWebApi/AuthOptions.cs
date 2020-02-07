@@ -15,7 +15,7 @@ namespace MetroWebApi
         public const int LIFETIME = 1; // время жизни токена - 1 минута
         public static SymmetricSecurityKey GetSymmetricSecurityKey()
         {
-            return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(KEY));
+            return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(KEY));
         }
     }
 }

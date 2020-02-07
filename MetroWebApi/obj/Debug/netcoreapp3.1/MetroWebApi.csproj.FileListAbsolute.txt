@@ -785,3 +785,13 @@ C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Syste
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\obj\Debug\netcoreapp3.1\MetroWebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\obj\Debug\netcoreapp3.1\MetroWebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

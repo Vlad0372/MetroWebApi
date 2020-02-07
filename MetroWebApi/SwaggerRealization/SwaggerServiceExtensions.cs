@@ -15,10 +15,10 @@ namespace MetroWebApi
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1.0", new OpenApiInfo
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Main API v1.0",
-                    Version = "1.0"
+                    Title = "Main API v1",
+                    Version = "1"
                 });
                 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -53,7 +53,7 @@ namespace MetroWebApi
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Versioned API v1.0");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Versioned API v1");
                 c.DocumentTitle = "Title Documentation";
                 c.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
             });
