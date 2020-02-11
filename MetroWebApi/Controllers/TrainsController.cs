@@ -25,7 +25,7 @@ namespace MetroWebApi.Controllers
         }
 
         // GET: api/trains
-        [Authorize]
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Train>>> GetTrainItems()
         {

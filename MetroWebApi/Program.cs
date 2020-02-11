@@ -31,7 +31,7 @@ namespace MetroWebApi
                 try
                 {
                     var context = services.GetRequiredService<MetroContext>();
-                    //context.Database.EnsureCreated();
+                    context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

@@ -26,8 +26,7 @@ namespace MetroWebApi
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
            
@@ -46,11 +45,14 @@ namespace MetroWebApi
                      options.TokenValidationParameters = new TokenValidationParameters
                      {
                          ValidateIssuer = true,
+                         ValidIssuer = Configuration["Jwt:Issuer"],
+
                          ValidateAudience = true,
+                         ValidAudience = Configuration["Jwt:Audience"],
+
                          ValidateLifetime = true,
                          ValidateIssuerSigningKey = true,
-                         ValidIssuer = Configuration["Jwt:Issuer"],
-                         ValidAudience = Configuration["Jwt:Issuer"],
+                                          
                          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                      };
                  });
@@ -62,7 +64,6 @@ namespace MetroWebApi
             
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
            

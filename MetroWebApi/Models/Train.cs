@@ -11,7 +11,7 @@ namespace MetroWebApi.Models
         public string Model { get; set; }
         public string StartPoint { get; set; }
         public string EndPoint { get; set; }    
-        public DateTime DepartureTime { get; set; }
-        public DateTime ArrivalTime { get; set; }
+        public int DepartureHour { get; set; }
+        public int ArrivalHour { get; set; }
     }
 }

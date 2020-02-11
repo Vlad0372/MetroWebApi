@@ -13,7 +13,8 @@ namespace MetroWebApi.Models
            : base(options)
         {
         }
-
+        
+        public DbSet<User> Users { get; set; }
         public DbSet<Train> Trains { get; set; }
     }
 }
