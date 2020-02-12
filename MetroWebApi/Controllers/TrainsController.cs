@@ -10,6 +10,7 @@ using MetroWebApi.Controllers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Authorization;
+using MetroWebApi.Entities;
 
 namespace MetroWebApi.Controllers
 {
@@ -17,15 +18,15 @@ namespace MetroWebApi.Controllers
     [ApiController]
     public class TrainsController : ControllerBase
     {
-        private readonly MetroContext _context;
+        private readonly ApplicationContext _context;
 
-        public TrainsController(MetroContext context)
+        public TrainsController(ApplicationContext context)
         {
             _context = context;
         }
 
         // GET: api/trains
-        [Authorize(Roles = "admin")]
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Train>>> GetTrainItems()
         {
@@ -102,6 +103,7 @@ namespace MetroWebApi.Controllers
         }
 
         // DELETE: api/trains/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Train>> DeleteTrain(int id)
         {

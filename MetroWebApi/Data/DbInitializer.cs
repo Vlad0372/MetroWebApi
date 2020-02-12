@@ -4,16 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MetroWebApi.Models;
+using MetroWebApi.Entities;
 
 namespace MetroWebApi.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(MetroContext context)
+        public static void Initialize(ApplicationContext context)
         {
            // context.Database.ExecuteSqlCommand("TRUNCATE TABLE Train");          
             
-            if(context.Trains.Any() && context.Users.Any())
+            if(context.Trains.Any())
             {
                 return;
             }
@@ -31,19 +32,7 @@ namespace MetroWebApi.Data
             {
                 context.Trains.Add(t);
             }
-            var users = new User[]
-           {
-                new User{Email = "user1@gmail.com", Password = "user1", Role = "user"},
-                new User{Email = "user2@gmail.com", Password = "user2", Role = "user"},
-                new User{Email = "user3@gmail.com", Password = "user3", Role = "user"},
-                new User{Email = "user4@gmail.com", Password = "user4", Role = "user"},
-                new User{Email = "user5@gmail.com", Password = "user5", Role = "user"},
-                new User{Email = "admin@gmail.com", Password = "admin", Role = "admin"},
-           };
-            foreach (User u in users)
-            {
-                context.Users.Add(u);
-            }
+            
             context.SaveChanges();
         }
 

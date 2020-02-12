@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using MetroWebApi.Data;
-using MetroWebApi.Models;
+using MetroWebApi.Entities;
 
 
 namespace MetroWebApi
@@ -17,10 +17,10 @@ namespace MetroWebApi
     {
         public static void Main(string[] args)
         {
-            //CreateHostBuilder(args).Build().Run();
-            var host = CreateHostBuilder(args).Build();
-            CreateDbIfNotExists(host);
-            host.Run();
+            CreateHostBuilder(args).Build().Run();
+            //var host = CreateHostBuilder(args).Build();
+            //CreateDbIfNotExists(host);
+            //host.Run();
         }
         private static void CreateDbIfNotExists(IHost host)
         {
@@ -30,7 +30,7 @@ namespace MetroWebApi
 
                 try
                 {
-                    var context = services.GetRequiredService<MetroContext>();
+                    var context = services.GetRequiredService<ApplicationContext>();
                     context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }

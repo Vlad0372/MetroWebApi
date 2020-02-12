@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -11,10 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using MetroWebApi.Models;
+using MetroWebApi.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-
+using System.IdentityModel.Tokens.Jwt;
 
 namespace MetroWebApi
 {
@@ -32,13 +34,27 @@ namespace MetroWebApi
            
 
             #region DBcontext
-            services.AddDbContext<MetroContext>(options =>
+            services.AddDbContext<ApplicationContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")
                    ));
             #endregion
+            #region Identity
+            services.AddIdentity<User, IdentityRole>(options =>
+                {
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
 
+
+
+
+
+                })
+                .AddEntityFrameworkStores<ApplicationContext>()
+                .AddDefaultTokenProviders();
+            #endregion
             #region Jwt
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                  .AddJwtBearer(options =>
                  {
