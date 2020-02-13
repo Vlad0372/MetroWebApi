@@ -103,7 +103,7 @@ namespace MetroWebApi.Controllers
         }
 
         // DELETE: api/trains/5
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Train>> DeleteTrain(int id)
         {

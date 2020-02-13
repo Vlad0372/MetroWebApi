@@ -7,41 +7,37 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using MetroWebApi.Data;
 using MetroWebApi.Entities;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace MetroWebApi
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
-            //var host = CreateHostBuilder(args).Build();
-            //CreateDbIfNotExists(host);
-            //host.Run();
-        }
-        private static void CreateDbIfNotExists(IHost host)
-        {
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
+            var host = CreateHostBuilder(args).Build();
 
-                try
+            using (var serviceScope = host.Services.CreateScope())
+            {
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+               
+                if(!await roleManager.RoleExistsAsync("Admin"))
                 {
-                    var context = services.GetRequiredService<ApplicationContext>();
-                    context.Database.EnsureCreated();
-                    DbInitializer.Initialize(context);
+                    var adminRole = new IdentityRole("Admin");
+                    await roleManager.CreateAsync(adminRole);
                 }
-                catch (Exception ex)
+
+                if (!await roleManager.RoleExistsAsync("User"))
                 {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred creating the DB.");
+                    var userRole = new IdentityRole("User");
+                    await roleManager.CreateAsync(userRole);
                 }
             }
-        }
 
+
+            await host.RunAsync();
+        }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

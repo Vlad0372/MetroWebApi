@@ -10,82 +10,103 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MetroWebApi.Models;
+using MetroWebApi.Options;
 
 namespace MetroWebApi.Controllers
 {
     [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
-        private readonly SignInManager<User> _signInManager;
-        private readonly UserManager<User> _userManager;
-        private readonly IConfiguration _configuration;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly JwtSettings _jwtSettings;
 
         public AccountController(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager,
-            IConfiguration configuration
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
+            JwtSettings jwtSettings
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _configuration = configuration;
+            _jwtSettings = jwtSettings;
         }
 
         [HttpPost]
-        public async Task<object> Login(LoginDto model)
+        public async Task<string> Register([FromBody]RegisterDto request)
         {
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
+            var existingUser = await _userManager.FindByEmailAsync(request.Email);
 
-            if (result.Succeeded)
+            if(existingUser != null)
             {
-                var user = _userManager.Users.SingleOrDefault(r => r.Email == model.Email);
-                return await GenerateJwtToken(model.Email, user);
+                return "Error: user with this email already exist!";
+            }
+            
+            var newUser = new IdentityUser
+            {
+                Email = request.Email,
+                UserName = request.Email
+            };
+            
+            var createdUser = await _userManager.CreateAsync(newUser, request.Password);
+
+        
+            await _userManager.AddToRoleAsync(newUser, "Admin");
+
+            if (!createdUser.Succeeded)
+            {
+                return "Unknown error!";
             }
 
-            return BadRequest(new { errorText = "Invalid username or password." });
+            string token = GenerateJwtToken(newUser);
+
+            return token; 
         }
 
         [HttpPost]
-        public async Task<object> Register(RegisterDto model)
+        public async Task<string> Login([FromBody]LoginDto request)
         {
-            var user = new User
-            {
-                UserName = model.Email,
-                Email = model.Email
-            };
-            var result = await _userManager.CreateAsync(user, model.Password);
+            var existingUser = await _userManager.FindByEmailAsync(request.Email);
 
-            if (result.Succeeded)
+            if (existingUser == null)
             {
-                await _signInManager.SignInAsync(user, false);
-                return await GenerateJwtToken(model.Email, user);
+                return "user does not exist!";               
+            }
+           
+
+            var userHasValidPassword = await _userManager.CheckPasswordAsync(existingUser, request.Password);
+
+            if (!userHasValidPassword)
+            {
+                return "Error: wrong login or(and) password!";
             }
 
-            return BadRequest(new { errorText = "Unknown error(maybe, this user is already register)" });
-        }
+            string token = GenerateJwtToken(existingUser);
 
-        private async Task<object> GenerateJwtToken(string email, IdentityUser user)
+            return token;
+        }
+        private string GenerateJwtToken(IdentityUser user)
         {
-            var claims = new List<Claim>
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_jwtSettings.Key);
+            var tokenDescriptor = new SecurityTokenDescriptor
             {
-                new Claim(JwtRegisteredClaimNames.Sub, email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, user.Id)
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                    new Claim("id", user.Id)
+
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(30),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                                                                SecurityAlgorithms.HmacSha256Signature)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddMinutes(30);
+            var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            var token = new JwtSecurityToken(
-                _configuration["Jwt:Issuer"],
-                _configuration["Jwt:Audience"],
-                claims,
-                expires: expires,
-                signingCredentials: creds
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return  tokenHandler.WriteToken(token);
         }      
     }
 }

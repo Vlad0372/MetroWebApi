@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using MetroWebApi.Options;
 
 namespace MetroWebApi
 {
@@ -31,7 +32,7 @@ namespace MetroWebApi
         
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddCors();
 
             #region DBcontext
             services.AddDbContext<ApplicationContext>(options =>
@@ -40,38 +41,39 @@ namespace MetroWebApi
                    ));
             #endregion
             #region Identity
-            services.AddIdentity<User, IdentityRole>(options =>
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
                 {
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
-
-
-
-
-
                 })
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
             #endregion
             #region Jwt
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                 .AddJwtBearer(options =>
-                 {
-                     options.TokenValidationParameters = new TokenValidationParameters
-                     {
-                         ValidateIssuer = true,
-                         ValidIssuer = Configuration["Jwt:Issuer"],
+            var jwtSettings = new JwtSettings();
+            Configuration.Bind(nameof(jwtSettings), jwtSettings);
+            services.AddSingleton(jwtSettings);
 
-                         ValidateAudience = true,
-                         ValidAudience = Configuration["Jwt:Audience"],
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Key)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    RequireExpirationTime = false,
+                    ValidateLifetime = false
 
-                         ValidateLifetime = true,
-                         ValidateIssuerSigningKey = true,
-                                          
-                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                     };
-                 });
+                };
+            });
 #endregion
 
             services.AddControllers();
@@ -88,7 +90,11 @@ namespace MetroWebApi
                 app.UseSwaggerDocumentation();
                 app.UseDeveloperExceptionPage();
             }
-            
+
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
