@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MetroWebApi.Models;
 using MetroWebApi.Options;
+using MetroWebApi.Controllers;
 
 namespace MetroWebApi.Controllers
 {
@@ -20,26 +21,30 @@ namespace MetroWebApi.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly JwtSettings _jwtSettings;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public AccountController(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
-            JwtSettings jwtSettings
+            JwtSettings jwtSettings,
+            RoleManager<IdentityRole> roleManager
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _jwtSettings = jwtSettings;
+            _roleManager = roleManager;
         }
 
         [HttpPost]
-        public async Task<string> Register([FromBody]RegisterDto request)
+        public async Task<IActionResult> Register([FromBody]RegisterDto request)
         {
             var existingUser = await _userManager.FindByEmailAsync(request.Email);
 
+            
             if(existingUser != null)
             {
-                return "Error: user with this email already exist!";
+                return BadRequest("Error: user with this email already exist!");
             }
             
             var newUser = new IdentityUser
@@ -49,28 +54,26 @@ namespace MetroWebApi.Controllers
             };
             
             var createdUser = await _userManager.CreateAsync(newUser, request.Password);
-
-        
-            await _userManager.AddToRoleAsync(newUser, "Admin");
+               
 
             if (!createdUser.Succeeded)
             {
-                return "Unknown error!";
+                return BadRequest("Unknown error!");
             }
 
-            string token = GenerateJwtToken(newUser);
+            string token = await GenerateJwtToken(newUser);
 
-            return token; 
+            return Ok(token); 
         }
 
         [HttpPost]
-        public async Task<string> Login([FromBody]LoginDto request)
+        public async Task<IActionResult> Login([FromBody]LoginDto request)
         {
             var existingUser = await _userManager.FindByEmailAsync(request.Email);
 
             if (existingUser == null)
             {
-                return "user does not exist!";               
+                return BadRequest("user does not exist!");               
             }
            
 
@@ -78,27 +81,33 @@ namespace MetroWebApi.Controllers
 
             if (!userHasValidPassword)
             {
-                return "Error: wrong login or(and) password!";
+                return BadRequest("Error: wrong login or(and) password!");
             }
+          
+            string token = await GenerateJwtToken(existingUser);
 
-            string token = GenerateJwtToken(existingUser);
-
-            return token;
+            return Ok(token);
         }
-        private string GenerateJwtToken(IdentityUser user)
+        private async Task <string> GenerateJwtToken(IdentityUser user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtSettings.Key);
+
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim("id", user.Id)
+            };
+
+            var userClaims = await _userManager.GetClaimsAsync(user);
+
+            claims.AddRange(userClaims);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                    new Claim("id", user.Id)
-
-                }),
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddMinutes(30),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
                                                                 SecurityAlgorithms.HmacSha256Signature)
@@ -107,6 +116,13 @@ namespace MetroWebApi.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return  tokenHandler.WriteToken(token);
-        }      
+        }
+        [HttpPost]
+        public async Task<IList<string>> CheckUserRole(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            return await _userManager.GetRolesAsync(user);       
+        }
     }
 }

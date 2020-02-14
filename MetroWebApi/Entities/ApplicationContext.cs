@@ -17,6 +17,8 @@ namespace MetroWebApi.Entities
             Database.EnsureCreated();
         }
 
-        public DbSet<Train> Trains { get; set; }
+        public DbSet<Railway> Railways { get; set; }
+        public DbSet<TicketArchive> TicketArchives { get; set; }
+
     }
 }

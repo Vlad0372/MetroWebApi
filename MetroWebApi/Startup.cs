@@ -32,7 +32,7 @@ namespace MetroWebApi
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            
 
             #region DBcontext
             services.AddDbContext<ApplicationContext>(options =>
@@ -40,15 +40,17 @@ namespace MetroWebApi
                    Configuration.GetConnectionString("DefaultConnection")
                    ));
             #endregion
+
             #region Identity
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
                 {
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
-                })
+                })                
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
             #endregion
+
             #region Jwt
             var jwtSettings = new JwtSettings();
             Configuration.Bind(nameof(jwtSettings), jwtSettings);
@@ -74,7 +76,9 @@ namespace MetroWebApi
 
                 };
             });
-#endregion
+            #endregion
+
+            services.AddCors();
 
             services.AddControllers();
 
