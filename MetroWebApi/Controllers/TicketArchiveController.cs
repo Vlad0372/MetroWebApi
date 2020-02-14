@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 using MetroWebApi.Entities;
 
 
+
 namespace MetroWebApi.Controllers
 {
     //[Authorize(Roles = "Admin")]
@@ -83,7 +84,7 @@ namespace MetroWebApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TicketExists(id))
+                if (!_context.TicketArchives.Any(e => e.Id == id))
                 {
                     return NotFound();
                 }

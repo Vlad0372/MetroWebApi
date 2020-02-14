@@ -1,0 +1,3 @@
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.csprojAssemblyReference.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfoInputs.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfo.cs

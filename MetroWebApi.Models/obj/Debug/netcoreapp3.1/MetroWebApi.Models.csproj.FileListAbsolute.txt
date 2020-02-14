@@ -1,0 +1,8 @@
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\bin\Debug\netcoreapp3.1\MetroWebApi.Models.deps.json
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\bin\Debug\netcoreapp3.1\MetroWebApi.Models.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\bin\Debug\netcoreapp3.1\MetroWebApi.Models.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.csprojAssemblyReference.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.AssemblyInfoInputs.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.AssemblyInfo.cs
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.pdb

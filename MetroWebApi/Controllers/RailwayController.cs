@@ -27,7 +27,7 @@ namespace MetroWebApi.Controllers
             _userManager = userManager;
         }
        
-        //[Authorize]
+        [Authorize(Roles ="User")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Railway>>> GetAllRailways()
         {
@@ -79,7 +79,7 @@ namespace MetroWebApi.Controllers
             return NoContent();
         }
 
-
+        [Authorize(Roles= "Admin")]
         [HttpPost]
         public async Task<ActionResult<Railway>> PostRailway(Railway railway)
         {

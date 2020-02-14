@@ -44,7 +44,7 @@ namespace MetroWebApi.Controllers
             return await _context.Railways.ToListAsync();
         }
         [HttpGet("{startPoint}, {endPoint}")]
-        public ActionResult<IEnumerable<Railway>> GetAllRailways(string startPoint, string endPoint)
+        public Task<ActionResult<IEnumerable<Railway>>> GetAllRailways(string startPoint, string endPoint)
         {
             var query = from ways in _context.Railways
                         where ways.StartPoint == startPoint && ways.EndPoint == endPoint
@@ -67,7 +67,7 @@ namespace MetroWebApi.Controllers
         }
 
         [HttpGet("railwayId")]
-        public async Task<IActionResult> GetBuyTicket(int railwayId)
+        public async Task<IActionResult<TicketArchive>> BuyTicket(int railwayId)
         {
             // var railway = await _context.Railways.FindAsync(railwayId);
             var railway =  _context.Railways.Where(c => c.Id == railwayId).FirstOrDefault();
@@ -94,7 +94,7 @@ namespace MetroWebApi.Controllers
                 };
                 await _context.TicketArchives.AddAsync(newTicketArchive);
                 await _context.SaveChangesAsync();
-                return Ok("Purchase!");
+                return Ok(newTicketArchive);
             }
             
                 return NotFound("Error: no more tickets!");

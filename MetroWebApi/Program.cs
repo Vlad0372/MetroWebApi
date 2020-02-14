@@ -45,6 +45,7 @@ namespace MetroWebApi
                     if (result.Succeeded)
                     {
                         await userManager.AddToRoleAsync(admin, "Admin");
+                        await userManager.AddToRoleAsync(admin, "User");
                     }
                 }
             }

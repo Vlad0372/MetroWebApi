@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MetroWebApi.Models.Dto\MetroWebApi.Models.Dto.csproj" />
+    <ProjectReference Include="..\MetroWebApi.Models\MetroWebApi.Models.csproj" />
+    <ProjectReference Include="..\MetroWebApi\MetroWebApi.csproj" />
+  </ItemGroup>
+
+</Project>

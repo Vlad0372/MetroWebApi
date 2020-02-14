@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MetroWebApi.Models.Dto/1.0.0": {
+        "runtime": {
+          "MetroWebApi.Models.Dto.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MetroWebApi.Models.Dto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
