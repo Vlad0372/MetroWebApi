@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\GnomE71\\.nuget\\packages\\": {},
+    "C:\\Users\\vladc\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
+      "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
       "projectName": "MetroWebApi.Models.Dto",
-      "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
-      "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\obj\\",
+      "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
+      "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

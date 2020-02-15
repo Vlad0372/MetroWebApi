@@ -13,61 +13,55 @@ using MetroWebApi.Models.Dto;
 using MetroWebApi.Controllers;
 using Microsoft.EntityFrameworkCore.Internal;
 using System.ComponentModel.DataAnnotations;
+using MetroWebApi.Services.Services;
+using MetroWebApi.Services.Interfaces.IServices;
+
 
 namespace MetroWebApi.Controllers
 {
     [Route("[controller]/[action]")]
+    //дозволити анонімам
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly Acco
+        
+        private readonly IAccountService _accountService;
 
-        public AccountController(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
-            RoleManager<IdentityRole> roleManager
-            )
+        public AccountController(IAccountService accountService)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _roleManager = roleManager;
+            _accountService = accountService;
         }
 
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterDto request)
         {
+            string token;
+            try
+            {
+                token = await _accountService.RegisterAsync(request);
+            }
+            catch(ArgumentException ex)
+            {
+                return BadRequest("Error " + ex.ParamName + ": " + ex.Message);
+            }
             
-
             return Ok(token); 
         }
 
         [HttpPost]
         public async Task<IActionResult> Login([FromBody]LoginDto request)
         {
-            var existingUser = await _userManager.FindByEmailAsync(request.Email);
+            string token;
 
-            if (existingUser == null)
+            try
             {
-                return BadRequest("user does not exist!");               
+                token = await _accountService.LoginAsync(request);
             }
-           
-
-            var userHasValidPassword = await _userManager.CheckPasswordAsync(existingUser, request.Password);
-
-            if (!userHasValidPassword)
+            catch (ArgumentException ex)
             {
-                return BadRequest("Error: wrong login or(and) password!");
+                return BadRequest("Error " + ex.ParamName + ": " + ex.Message);
             }
-          
-            string token = await GenerateJwtToken(existingUser);
 
             return Ok(token);
-        }
-        private async Task<string> GenerateJwtToken(IdentityUser user)
-        {
-            
-        }       
+        }      
     }
 }

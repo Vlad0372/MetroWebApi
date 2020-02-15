@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MetroWebApi.Services.Services;
+using MetroWebApi.Services.Interfaces.IServices;
 
 namespace MetroWebApi.Controllers
 {
@@ -16,90 +18,97 @@ namespace MetroWebApi.Controllers
     [ApiController]
     public class MetroUserController : ControllerBase
     {
-        private readonly ApplicationContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
-
-        public MetroUserController(ApplicationContext context, UserManager<IdentityUser> userManager)
+        private readonly IMetroUserService _metroUserService;
+        
+        public MetroUserController(IMetroUserService metroUserService)
         {
-            _context = context;
-            _userManager = userManager;
+            _metroUserService = metroUserService;
         }
 
+        
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TicketArchive>>> GetMyArchiveTickets()
+        public async Task<ActionResult<IEnumerable<TicketArchive>>> GetMyTicketArchive()
         {
-            var currentId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-            var currentUser = await _userManager.FindByIdAsync(currentId);
+            IEnumerable<TicketArchive> myArchive;
 
-            var query = from tickets in _context.TicketArchives
-                        where tickets.OwnerId == currentUser.Id
-                        select tickets;
+            try
+            {
+                myArchive = await _metroUserService.GetMyTicketArchiveAsync();
+            }
+            catch (ArgumentException ex)
+            {
+                return Ok("error: " + ex.Message);
+            }
 
-            return query.ToList();         
+            return Ok(myArchive);
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Railway>>> GetAllRailways()
-        {         
-            return await _context.Railways.ToListAsync();
-        }
-        [HttpGet("{startPoint}, {endPoint}")]
-        public Task<ActionResult<IEnumerable<Railway>>> GetAllRailways(string startPoint, string endPoint)
         {
-            var query = from ways in _context.Railways
-                        where ways.StartPoint == startPoint && ways.EndPoint == endPoint
-                        select ways;
+            IEnumerable<Railway> railwaysList;
+            try
+            {
+                railwaysList = await _metroUserService.GetAllRailwaysAsync();
+            }
+            catch (ArgumentException ex)
+            {
+                return Ok("error: " + ex.Message);
+            }
 
-            return query.ToList();
+            return Ok(railwaysList);
+        }
+
+        [HttpGet("railwayId")]
+        public async Task<ActionResult<TicketArchive>> BuyTicket(int railwayId)
+        {
+            TicketArchive ticket;
+            try
+            {
+                ticket = await _metroUserService.BuyTicketAsync(railwayId);
+            }
+            catch (ArgumentException ex)
+            {
+                return Ok("error: " + ex.Message);
+            }
+
+            return Ok(ticket);
+        }
+
+
+        [HttpGet("{startPoint}, {endPoint}")]
+        public ActionResult<IEnumerable<Railway>> GetAllRailways(string startPoint, string endPoint)
+        {
+            IEnumerable<Railway> railwaysList;
+
+            try
+            {
+                railwaysList = _metroUserService.GetAllRailwaysAsync(startPoint, endPoint);
+            }
+            catch (ArgumentException ex)
+            {
+                return Ok("error: " + ex.Message);
+            }
+
+            return Ok(railwaysList);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<TicketArchive>> GetTicket(int id)
         {
-            var ticketArchive = await _context.TicketArchives.FindAsync(id);
+            TicketArchive ticket;
 
-            if (ticketArchive == null)
+            try
             {
-                return NotFound();
+                ticket = await _metroUserService.GetTicketAsync(id);
+            }
+            catch (ArgumentException ex)
+            {
+                return NotFound("error: " + ex.Message);
             }
 
-            return ticketArchive;
+            return Ok(ticket);
         }
-
-        [HttpGet("railwayId")]
-        public async Task<IActionResult<TicketArchive>> BuyTicket(int railwayId)
-        {
-            // var railway = await _context.Railways.FindAsync(railwayId);
-            var railway =  _context.Railways.Where(c => c.Id == railwayId).FirstOrDefault();
-
-
-            if (railway == null)
-            {
-                return NotFound("Error: railway with this ID does not exist!");
-            }
-            if (railway.FreePlacesAmount > 0)
-            {
-                railway.FreePlacesAmount = railway.FreePlacesAmount - 1;
-                _context.Entry(railway).State = EntityState.Modified;
-
-                var currentId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-                var currentUser = await _userManager.FindByIdAsync(currentId);
-
-                TicketArchive newTicketArchive = new TicketArchive
-                {
-                    OwnerId = currentUser.Id,
-                    StartPoint = railway.StartPoint,
-                    EndPoint = railway.EndPoint,
-                    DepartureDate = railway.DepartureDate
-                };
-                await _context.TicketArchives.AddAsync(newTicketArchive);
-                await _context.SaveChangesAsync();
-                return Ok(newTicketArchive);
-            }
-            
-                return NotFound("Error: no more tickets!");
-                                          
-        }
-   
+  
     }
 }

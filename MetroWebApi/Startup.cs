@@ -18,6 +18,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using MetroWebApi.Options;
+using MetroWebApi.Services.Services;
+using MetroWebApi.Services.Interfaces.IServices;
 
 namespace MetroWebApi
 {
@@ -46,9 +48,10 @@ namespace MetroWebApi
                 {
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
-                })                
+                })
                 .AddEntityFrameworkStores<ApplicationContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+                .AddUserManager<UserManager<IdentityUser>>();
             #endregion
 
             #region Jwt
@@ -79,8 +82,19 @@ namespace MetroWebApi
             #endregion
 
             services.AddCors();
-
+            
             services.AddControllers();
+
+            #region AddHttpContexAccessorToServices
+            services.AddHttpContextAccessor();
+
+
+            services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IMetroUserService, MetroUserService>();
+            
+
+
+            #endregion
 
             services.AddSwaggerDocumentation();
             

@@ -7,7 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\MetroWebApi.Models.Dto\MetroWebApi.Models.Dto.csproj" />
     <ProjectReference Include="..\MetroWebApi.Models\MetroWebApi.Models.csproj" />
-    <ProjectReference Include="..\MetroWebApi\MetroWebApi.csproj" />
   </ItemGroup>
 
 </Project>

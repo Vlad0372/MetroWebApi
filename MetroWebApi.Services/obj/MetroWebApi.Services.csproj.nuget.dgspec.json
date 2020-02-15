@@ -1,188 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj": {}
+    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
+    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
-        "projectName": "MetroWebApi.Models.Dto",
-        "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
-        "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\obj\\",
+        "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj",
+        "projectName": "MetroWebApi.Entities",
+        "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj",
+        "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj",
-        "projectName": "MetroWebApi.Models",
-        "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj",
-        "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
-        "projectName": "MetroWebApi.Options",
-        "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
-        "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj",
-        "projectName": "MetroWebApi.Services.Interfaces",
-        "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj",
-        "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -195,141 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
-                "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj"
-              },
-              "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj": {
-                "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj"
-              },
-              "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj": {
-                "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
-        "projectName": "MetroWebApi.Services",
-        "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
-        "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj": {
-                "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj"
-              },
-              "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj",
-        "projectName": "MetroWebApi",
-        "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi\\MetroWebApi.csproj",
-        "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
-                "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj"
+              "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj": {
+                "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj"
               }
             }
           }
@@ -343,47 +45,184 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
+            "Microsoft.AspNet.Identity.Core": {
               "target": "Package",
-              "version": "[5.2.7, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[2.2.3, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
+        "projectName": "MetroWebApi.Models.Dto",
+        "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj",
+        "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj",
+        "projectName": "MetroWebApi.Models",
+        "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj",
+        "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
+        "projectName": "MetroWebApi.Options",
+        "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
+        "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
               "target": "Package",
-              "version": "[3.1.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
-            "Microsoft.Extensions.Logging.Debug": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
-            "Microsoft.TeamFoundationServer.Client": {
-              "target": "Package",
-              "version": "[16.153.0, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[2.2.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -392,6 +231,157 @@
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj",
+        "projectName": "MetroWebApi.Services.Interfaces",
+        "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
+                "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj"
+              },
+              "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj": {
+                "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models\\MetroWebApi.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
+        "projectName": "MetroWebApi.Services",
+        "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
+        "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj": {
+                "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj"
+              },
+              "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
+                "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj"
+              },
+              "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj": {
+                "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj"
+              },
+              "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [

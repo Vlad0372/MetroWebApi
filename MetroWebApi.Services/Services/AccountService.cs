@@ -1,6 +1,5 @@
 ﻿using System;
 using MetroWebApi.Services.Interfaces.IServices;
-using Microsoft.AspNetCore.Identity;
 using MetroWebApi.Options;
 using System.Threading.Tasks;
 using MetroWebApi.Models.Dto;
@@ -9,8 +8,9 @@ using System.Text;
 using System.Collections.Generic;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Identity;
 
-namespace MetroWebApi.Services
+namespace MetroWebApi.Services.Services
 {
     public class AccountService : IAccountService
     {
@@ -18,8 +18,7 @@ namespace MetroWebApi.Services
         private readonly JwtSettings _jwtSettings;
         
 
-        public AccountService(UserManager<IdentityUser> userManager,                         
-                              JwtSettings jwtSettings)
+        public AccountService(UserManager<IdentityUser> userManager, JwtSettings jwtSettings)
         {
             _userManager = userManager;
             _jwtSettings = jwtSettings;            
@@ -30,7 +29,7 @@ namespace MetroWebApi.Services
 
             if (existingUser != null)
             {
-                throw new ArgumentException("user with this email already exist.", "400");
+                throw new ArgumentException("user with this email already exist.");
             }
 
             var newUser = new IdentityUser
@@ -58,7 +57,7 @@ namespace MetroWebApi.Services
 
             if (existingUser == null)
             {
-                throw new ArgumentException("user does not exist.", "400");
+                throw new ArgumentException("user does not exist.");
             }
 
 
@@ -66,7 +65,7 @@ namespace MetroWebApi.Services
 
             if (!userHasValidPassword)
             {
-                throw new ArgumentException("wrong login or(and) password.", "400");
+                throw new ArgumentException("wrong login or(and) password.");
             }
 
             string token = await GenerateJwtTokenAsync(existingUser);
@@ -74,12 +73,14 @@ namespace MetroWebApi.Services
             return token;
         }
 
-        public async Task<string> GenerateJwtTokenAsync(IdentityUser user)
+        private async Task<string> GenerateJwtTokenAsync(IdentityUser user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtSettings.Key);
 
             var userRoles = await _userManager.GetRolesAsync(user);
+
+           // var userRoles = await _userManager.GetRolesAsync(user.Email);
 
             var claims = new List<Claim>
             {

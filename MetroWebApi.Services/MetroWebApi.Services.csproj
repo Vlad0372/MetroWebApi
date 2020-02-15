@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MetroWebApi.Entities\MetroWebApi.Entities.csproj" />
+    <ProjectReference Include="..\MetroWebApi.Models.Dto\MetroWebApi.Models.Dto.csproj" />
     <ProjectReference Include="..\MetroWebApi.Options\MetroWebApi.Options.csproj" />
     <ProjectReference Include="..\MetroWebApi.Services.Interfaces\MetroWebApi.Services.Interfaces.csproj" />
   </ItemGroup>

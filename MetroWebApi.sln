@@ -5,19 +5,22 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi", "MetroWebApi\MetroWebApi.csproj", "{0D634BC9-C31D-4A14-B79E-82AA3C3E3AE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroWebApi.Models", "MetroWebApi.Models\MetroWebApi.Models.csproj", "{BF7E9482-B15B-4A1C-8122-8362E9B73E1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi.Models", "MetroWebApi.Models\MetroWebApi.Models.csproj", "{BF7E9482-B15B-4A1C-8122-8362E9B73E1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroWebApi.Models.Dto", "MetroWebApi.Models.Dto\MetroWebApi.Models.Dto.csproj", "{B57D3321-C93C-4A23-9060-C5CFBD1DAAA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi.Models.Dto", "MetroWebApi.Models.Dto\MetroWebApi.Models.Dto.csproj", "{B57D3321-C93C-4A23-9060-C5CFBD1DAAA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroWebApi.Entities", "MetroWebApi.Entities\MetroWebApi.Entities.csproj", "{08829A95-375F-4C6E-A773-9EA8D7C22AD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi.Entities", "MetroWebApi.Entities\MetroWebApi.Entities.csproj", "{08829A95-375F-4C6E-A773-9EA8D7C22AD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroWebApi.Options", "MetroWebApi.Options\MetroWebApi.Options.csproj", "{E4BA4501-90DA-438C-80AE-093EA5DF06CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi.Options", "MetroWebApi.Options\MetroWebApi.Options.csproj", "{E4BA4501-90DA-438C-80AE-093EA5DF06CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroWebApi.Migrations", "MetroWebApi.Migrations\MetroWebApi.Migrations.csproj", "{76FDA12E-7378-4F6F-AB9B-BA1E24FEE902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi.Migrations", "MetroWebApi.Migrations\MetroWebApi.Migrations.csproj", "{76FDA12E-7378-4F6F-AB9B-BA1E24FEE902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroWebApi.Services", "MetroWebApi.Services\MetroWebApi.Services.csproj", "{7F4D8384-A918-457A-BAA0-4EE91EDD3F1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi.Services", "MetroWebApi.Services\MetroWebApi.Services.csproj", "{7F4D8384-A918-457A-BAA0-4EE91EDD3F1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroWebApi.Services.Interfaces", "MetroWebApi.Services.Interfaces\MetroWebApi.Services.Interfaces.csproj", "{4F19F58F-BAAD-4B2A-BCEB-2984B06241ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroWebApi.Services.Interfaces", "MetroWebApi.Services.Interfaces\MetroWebApi.Services.Interfaces.csproj", "{4F19F58F-BAAD-4B2A-BCEB-2984B06241ED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B57D3321-C93C-4A23-9060-C5CFBD1DAAA9} = {B57D3321-C93C-4A23-9060-C5CFBD1DAAA9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

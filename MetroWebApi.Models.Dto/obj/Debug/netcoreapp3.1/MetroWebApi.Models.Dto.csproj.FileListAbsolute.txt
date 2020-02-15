@@ -6,3 +6,10 @@ C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcor
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.AssemblyInfo.cs
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.dll
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.pdb
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models.Dto\bin\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.deps.json
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models.Dto\bin\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.dll
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models.Dto\bin\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.pdb
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.AssemblyInfoInputs.cache
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.AssemblyInfo.cs
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.dll
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models.Dto\obj\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.pdb

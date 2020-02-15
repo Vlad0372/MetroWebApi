@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MetroWebApi.Services.Interfaces/1.0.0": {
+        "dependencies": {
+          "MetroWebApi.Models": "1.0.0",
+          "MetroWebApi.Models.Dto": "1.0.0"
+        },
+        "runtime": {
+          "MetroWebApi.Services.Interfaces.dll": {}
+        }
+      },
+      "MetroWebApi.Models/1.0.0": {
+        "runtime": {
+          "MetroWebApi.Models.dll": {}
+        }
+      },
+      "MetroWebApi.Models.Dto/1.0.0": {
+        "runtime": {
+          "MetroWebApi.Models.Dto.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MetroWebApi.Services.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MetroWebApi.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MetroWebApi.Models.Dto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,3 +1,16 @@
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.csprojAssemblyReference.cache
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfoInputs.cache
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfo.cs
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.csprojAssemblyReference.cache
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfoInputs.cache
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfo.cs
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.deps.json
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.dll
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Debug\netcoreapp3.1\MetroWebApi.Models.dll
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.dll
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.pdb
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Debug\netcoreapp3.1\MetroWebApi.Models.pdb
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.csproj.CopyComplete
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.pdb
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.dll
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.pdb
