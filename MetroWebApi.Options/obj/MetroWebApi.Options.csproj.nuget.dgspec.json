@@ -41,10 +41,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNet.Identity.Core": {
-              "target": "Package",
-              "version": "[2.2.3, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0, )"

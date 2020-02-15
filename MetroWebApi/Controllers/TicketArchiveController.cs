@@ -11,142 +11,112 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Authorization;
 using MetroWebApi.Entities;
+using MetroWebApi.Services.Interfaces;
+using MetroWebApi.Models.Dto;
 
 
 
 namespace MetroWebApi.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("[controller]/[action]")]
     [ApiController]
     public class TicketArchiveController : ControllerBase
     {
-        private readonly ApplicationContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ITicketArchiveService _ticketArciveService;
 
-        public TicketArchiveController(ApplicationContext context, UserManager<IdentityUser> userManager)
+        public TicketArchiveController(ITicketArchiveService ticketArciveService)
         {
-            _context = context;
-            _userManager = userManager;
+            _ticketArciveService = ticketArciveService;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TicketArchive>>> GetAllTickets()
         {
-            return await _context.TicketArchives.ToListAsync();
-
-        }
-
-        [HttpGet("{userEmail}")]
-        public async Task<ActionResult<IEnumerable<TicketArchive>>> GetAllTickets(string userEmail)
-        {
-            var user = await _userManager.FindByEmailAsync(userEmail);
-
-            if(user == null)
-            {
-                return BadRequest("Error: this user does not exist!");
-            } 
-
-            var query = from tckt in _context.TicketArchives
-                        where tckt.OwnerId == user.Id
-                        select tckt;
-
-            return query.ToList();
-        }
-        
-        [HttpGet("{id}")]
-        public async Task<ActionResult<TicketArchive>> GetTicket(int id)
-        {
-            var ticketArchive = await _context.TicketArchives.FindAsync(id);
-
-            if (ticketArchive == null)
-            {
-                return NotFound();
-            }
-
-            return ticketArchive;
-        }
-
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTicket(int id, TicketArchive ticketArchive)
-        {
-            if (id != ticketArchive.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(ticketArchive).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                return Ok(await _ticketArciveService.GetAllTicketsAsync());
             }
-            catch (DbUpdateConcurrencyException)
+            catch (ArgumentException ex)
             {
-                if (!_context.TicketArchives.Any(e => e.Id == id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return BadRequest("Error: " + ex.Message);
             }
+        }
 
-            return NoContent();
+        [HttpGet("{userId}")]
+        public async Task<ActionResult<IEnumerable<TicketArchive>>> GetAllTickets(string userId)
+        {
+            try
+            {
+                return Ok(await _ticketArciveService.GetAllTicketsAsync(userId));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
+        }
+        
+        [HttpGet("{ticketId}")]
+        public async Task<ActionResult<TicketArchive>> GetTicket(int ticketId)
+        {
+            try
+            {
+                return Ok(await _ticketArciveService.GetTicketAsync(ticketId));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
+        }
+
+
+        [HttpPut("{ticketId},{ticket}")]
+        public async Task<IActionResult> PutTicket(int ticketId, TicketArchive ticket)
+        {
+            try
+            {
+                return Ok(await _ticketArciveService.PutTicketAsync(ticketId, ticket));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
         }
 
 
         [HttpPost]
-        public async Task<ActionResult<TicketArchive>> PostTicket(TicketArchive ticketArchive)
+        public async Task<ActionResult<TicketArchive>> PostTicket(TicketArchive ticket)
         {
-            _context.TicketArchives.Add(ticketArchive);
-            await _context.SaveChangesAsync();
+            await _ticketArciveService.PostTicketAsync(ticket);
 
-            return CreatedAtAction(nameof(GetTicket), new { id = ticketArchive.Id }, ticketArchive);
+            return CreatedAtAction(nameof(GetTicket), new { id = ticket.Id }, ticket);
         }
 
        
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<TicketArchive>> DeleteTicket(int id)
+        [HttpDelete("{ticketId}")]
+        public async Task<ActionResult<TicketArchive>> DeleteTicket(int ticketId)
         {
-            var ticketArchive = await _context.TicketArchives.FindAsync(id);
-            if (ticketArchive == null)
+            try
             {
-                return NotFound();
+                return Ok(await _ticketArciveService.DeleteTicketAsync(ticketId));
             }
-
-            _context.TicketArchives.Remove(ticketArchive);
-            await _context.SaveChangesAsync();
-
-            return Ok("Successfully deleted!");
+            catch (ArgumentException ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }           
         }
 
-        [HttpDelete("{userEmail}")]
-        public async Task<ActionResult<TicketArchive>> DeleteAllTickets(string userEmail)
+        [HttpDelete("{userId}")]
+        public async Task<ActionResult<TicketArchive>> DeleteAllTickets(string userId)
         {
-            var user = await _userManager.FindByEmailAsync(userEmail);
-
-            if (user == null)
+            try
             {
-                return BadRequest("Error: this user does not exist!");
+                return Ok(await _ticketArciveService.DeleteAllTicketsAsync(userId));
             }
-
-            var all = _context.TicketArchives.Where(t => t.OwnerId == user.Id); 
-            _context.TicketArchives.RemoveRange(all);
-            _context.SaveChanges();
-
-            if (all == null)
+            catch (ArgumentException ex)
             {
-                return NotFound("Ticket archive is empty!");
-            }       
-
-            return Ok("Successfully deleted!");
-        }
-        private bool TicketExists(int id)
-        {
-            return _context.TicketArchives.Any(e => e.Id == id);
-        }
+                return BadRequest("Error: " + ex.Message);
+            }
+        }       
     }
 }

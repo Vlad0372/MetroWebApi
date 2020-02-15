@@ -1,5 +1,5 @@
 ﻿using System;
-using MetroWebApi.Services.Interfaces.IServices;
+using MetroWebApi.Services.Interfaces;
 using MetroWebApi.Options;
 using System.Threading.Tasks;
 using MetroWebApi.Models.Dto;
@@ -10,7 +10,7 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Identity;
 
-namespace MetroWebApi.Services.Services
+namespace MetroWebApi.Services
 {
     public class AccountService : IAccountService
     {
@@ -40,6 +40,7 @@ namespace MetroWebApi.Services.Services
 
             var createdUser = await _userManager.CreateAsync(newUser, request.Password);
 
+            await _userManager.AddToRoleAsync(newUser, "User");
 
             if (!createdUser.Succeeded)
             {
@@ -80,8 +81,6 @@ namespace MetroWebApi.Services.Services
 
             var userRoles = await _userManager.GetRolesAsync(user);
 
-           // var userRoles = await _userManager.GetRolesAsync(user.Email);
-
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
@@ -89,11 +88,13 @@ namespace MetroWebApi.Services.Services
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim("id", user.Id)
             };
+
+            //for multiply user roles
             foreach (var role in userRoles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
-
+            //for multiply user roles
             var userClaims = await _userManager.GetClaimsAsync(user);
 
             claims.AddRange(userClaims);

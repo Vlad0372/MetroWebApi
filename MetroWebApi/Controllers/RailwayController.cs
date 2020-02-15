@@ -1,228 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MetroWebApi.Models;
-using MetroWebApi.Controllers;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Authorization;
-using MetroWebApi.Entities;
+using MetroWebApi.Services.Interfaces;
 
 namespace MetroWebApi.Controllers
 {
+    [Authorize(Roles="Admin")]
     [Route("[controller]/[action]")]
     [ApiController]
     public class RailwayController : ControllerBase
     {
-        private readonly ApplicationContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IRailwayService _railwayService;       
 
-        public RailwayController(ApplicationContext context, UserManager<IdentityUser> userManager)
+        public RailwayController(IRailwayService railwayService)
         {
-            _context = context;
-            _userManager = userManager;
+            _railwayService = railwayService;
+            
         }
        
-        [Authorize(Roles ="User")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Railway>>> GetAllRailways()
         {
-            return await _context.Railways.ToListAsync();
-
-        }
-
-        //[Authorize(Roles = "Admin")]
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Railway>> GetRailway(int id)
-        {
-            var railway = await _context.Railways.FindAsync(id);
-
-            if (railway == null)
-            {
-                return NotFound();
-            }
-
-            return railway;
-        }
-
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutRailway(int id, Railway railway)
-        {
-            if (id != railway.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(railway).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                return Ok(await _railwayService.GetAllRailwaysAsync());
             }
-            catch (DbUpdateConcurrencyException)
+            catch(ArgumentException ex)
             {
-                if (!RailwayExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return BadRequest("Error: " + ex.Message);
             }
-
-            return NoContent();
         }
 
-        [Authorize(Roles= "Admin")]
+        [HttpGet("{railwayId}")]
+        public async Task<ActionResult<Railway>> GetRailway(int railwayId)
+        {
+            try
+            {
+                return Ok(await _railwayService.GetRailwayAsync(railwayId));
+            }
+            catch(ArgumentException ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<ActionResult<Railway>> PostRailway(Railway railway)
         {
-            _context.Railways.Add(railway);
-            await _context.SaveChangesAsync();
+            await _railwayService.PostRailwayAsync(railway);
 
             return CreatedAtAction(nameof(GetRailway), new { id = railway.Id }, railway);
         }
-      
-        //[Authorize(Roles = "Admin")]
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Railway>> DeleteRailway(int id)
-        {
-            var railway = await _context.Railways.FindAsync(id);
-            if (railway == null)
+
+        [HttpPut("{railwayId}")]
+        public async Task<IActionResult> PutRailway(int railwayId, Railway railway)
+        {        
+            try
             {
-                return NotFound();
+                return Ok(await _railwayService.PutRailwayAsync(railwayId, railway));
             }
-
-            _context.Railways.Remove(railway);
-            await _context.SaveChangesAsync();
-
-            return railway;
-        }
-        private bool RailwayExists(int id)
+            catch (ArgumentException ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
+        }       
+      
+        [HttpDelete("{railwayId}")]
+        public async Task<ActionResult<Railway>> DeleteRailway(int railwayId)
         {
-            return _context.Railways.Any(e => e.Id == id);
-        }
+            try
+            {
+                return Ok(await _railwayService.DeleteRailwayAsync(railwayId));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest("Error: " + ex.Message);
+            }
+        }     
     }
 }
-
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Microsoft.AspNetCore.Http;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.EntityFrameworkCore;
-//using MetroWebApi.Models;
-//using MetroWebApi.Controllers;
-//using Microsoft.AspNetCore.Identity;
-//using Microsoft.AspNetCore.Mvc.Filters;
-//using Microsoft.AspNetCore.Authorization;
-//using MetroWebApi.Entities;
-
-//namespace MetroWebApi.Controllers
-//{
-//    [Route("[controller]/[action]")]
-//    [ApiController]
-//    public class TrainsController : ControllerBase
-//    {
-//        private readonly ApplicationContext _context;
-
-//        public TrainsController(ApplicationContext context)
-//        {
-//            _context = context;
-//        }
-
-//        GET: api/trains
-
-//       [Authorize]
-//       [HttpGet]
-//        public async Task<ActionResult<IEnumerable<Train>>> GetAllTrains()
-//        {
-//            return await _context.Trains.ToListAsync();
-
-//        }
-
-//        GET: api/trains/5
-//        [Authorize(Roles = "Admin")]
-//        [HttpGet("{id}")]
-//        public async Task<ActionResult<Train>> GetTrain(int id)
-//        {
-
-//            var train = await _context.Trains.FindAsync(id);
-
-//            if (train == null)
-//            {
-//                return NotFound();
-//            }
-
-//            return train;
-//        }
-
-
-//        [HttpPut("{id}")]
-//        public async Task<IActionResult> PutTrain(int id, Train train)
-//        {
-//            if (id != train.Id)
-//            {
-//                return BadRequest();
-//            }
-
-//            _context.Entry(train).State = EntityState.Modified;
-
-//            try
-//            {
-//                await _context.SaveChangesAsync();
-//            }
-//            catch (DbUpdateConcurrencyException)
-//            {
-//                if (!TrainExists(id))
-//                {
-//                    return NotFound();
-//                }
-//                else
-//                {
-//                    throw;
-//                }
-//            }
-
-//            return NoContent();
-//        }
-
-
-//        [HttpPost]
-//        public async Task<ActionResult<Train>> PostTrain(Train train)
-//        {
-//            _context.Trains.Add(train);
-//            await _context.SaveChangesAsync();
-
-//            return CreatedAtAction(nameof(GetTrain), new { id = train.Id }, train);
-//        }
-
-//        DELETE: api/trains/5
-//        [Authorize(Roles = "Admin")]
-//        [HttpDelete("{id}")]
-//        public async Task<ActionResult<Train>> DeleteTrain(int id)
-//        {
-//            var train = await _context.Trains.FindAsync(id);
-//            if (train == null)
-//            {
-//                return NotFound();
-//            }
-
-//            _context.Trains.Remove(train);
-//            await _context.SaveChangesAsync();
-
-//            return train;
-//        }
-//        private bool TrainExists(int id)
-//        {
-//            return _context.Trains.Any(e => e.Id == id);
-//        }
-//    }
-//}

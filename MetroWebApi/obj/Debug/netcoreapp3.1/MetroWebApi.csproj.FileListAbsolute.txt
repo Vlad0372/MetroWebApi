@@ -818,10 +818,6 @@ C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\run
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\obj\Debug\netcoreapp3.1\MetroWebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\obj\Debug\netcoreapp3.1\MetroWebApi.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\EntityFramework.dll
-C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
-C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.dll
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.TeamFoundation.Build2.WebApi.dll
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Microsoft.TeamFoundation.Core.WebApi.dll
@@ -854,3 +850,5 @@ C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Metro
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.pdb
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.pdb
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Migrations.dll
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Migrations.pdb

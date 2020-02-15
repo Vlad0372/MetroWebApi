@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using MetroWebApi.Models;
-using MetroWebApi.Services.Interfaces.IServices;
+using MetroWebApi.Services.Interfaces;
 using MetroWebApi.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace MetroWebApi.Services.Services
+
+namespace MetroWebApi.Services
 {
     public class MetroUserService : IMetroUserService
     {
@@ -59,16 +59,16 @@ namespace MetroWebApi.Services.Services
 
         public async Task<IEnumerable<Railway>> GetAllRailwaysAsync()
         {
-            var query = await _context.Railways.ToListAsync();
+            var railwayList = await _context.Railways.ToListAsync();
 
-            if (query.Count() == 0)
+            if (railwayList.Count() == 0)
             {
-                throw new ArgumentException("no railways yet");
+                throw new ArgumentException("no railways yet.");
             }
-            return query;
+            return railwayList;
         }
 
-        public IEnumerable<Railway> GetAllRailwaysAsync(string startPoint, string endPoint)
+        public IEnumerable<Railway> GetAllRailways(string startPoint, string endPoint)
         {
             var query = from ways in _context.Railways
                         where ways.StartPoint == startPoint && ways.EndPoint == endPoint
@@ -76,7 +76,7 @@ namespace MetroWebApi.Services.Services
 
             if (query.Count() == 0)
             {
-                throw new ArgumentException("no railways on this route");
+                throw new ArgumentException("no railways on this route.");
             }
 
             return query.ToList();
@@ -84,8 +84,8 @@ namespace MetroWebApi.Services.Services
 
         public async Task<IEnumerable<TicketArchive>> GetMyTicketArchiveAsync()
         {
-            var currentId = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
-            var currentUser = await _userManager.FindByIdAsync(currentId);
+            var currentUserId = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
+            var currentUser = await _userManager.FindByIdAsync(currentUserId);
 
             var query = from tickets in _context.TicketArchives
                         where tickets.OwnerId == currentUser.Id
@@ -93,7 +93,7 @@ namespace MetroWebApi.Services.Services
 
             if (query.Count() == 0)
             {
-                throw new ArgumentException("ticket archive is empty");
+                throw new ArgumentException("ticket archive is empty.");
             }
 
             return query.ToList();

@@ -18,11 +18,11 @@ namespace MetroWebApi
         {
             var host = CreateHostBuilder(args).Build();
 
-            #region RolesInitialize
+            #region UserRolesInitialize
             using (var serviceScope = host.Services.CreateScope())
             {
                 string adminEmail = "admin@gmail.com";
-                string password = "adminpass123";
+                string adminPassword = "adminpass123";
 
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
@@ -41,7 +41,7 @@ namespace MetroWebApi
                 if (await userManager.FindByNameAsync(adminEmail) == null)
                 {
                     IdentityUser admin = new IdentityUser { Email = adminEmail, UserName = adminEmail };
-                    IdentityResult result = await userManager.CreateAsync(admin, password);
+                    IdentityResult result = await userManager.CreateAsync(admin, adminPassword);
                     if (result.Succeeded)
                     {
                         await userManager.AddToRoleAsync(admin, "Admin");

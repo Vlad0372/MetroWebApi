@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MetroWebApi.Models;
+using MetroWebApi.Models.Dto;
 
-
-namespace MetroWebApi.Services.Interfaces.IServices
+namespace MetroWebApi.Services.Interfaces
 {
     public interface ITicketArchiveService
     {
         Task<IEnumerable<TicketArchive>> GetAllTicketsAsync();
         Task<IEnumerable<TicketArchive>> GetAllTicketsAsync(string userEmail);
         Task<TicketArchive> GetTicketAsync(int ticketId);
-        Task PutTicketAsync(int ticketId, TicketArchive ticketArchive);
-        Task<TicketArchive> PostTicketAsync(TicketArchive ticketArchive);
+        Task<TicketArchive> PutTicketAsync(int ticketId, TicketArchive ticketArchive);
+        Task PostTicketAsync(TicketArchive ticketArchive);
         Task<TicketArchive> DeleteTicketAsync(int ticketId);
-        Task<TicketArchive> DeleteAllTicketsAsync(string userEmail);
+        Task<IEnumerable<TicketArchive>> DeleteAllTicketsAsync(string userEmail);
     }
 }

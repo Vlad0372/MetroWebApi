@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Microsoft.AspNet.Identity.Core/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        }
-      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
         "type": "package",
         "build": {
@@ -88,19 +79,6 @@
     }
   },
   "libraries": {
-    "Microsoft.AspNet.Identity.Core/2.2.3": {
-      "sha512": "Mv5FpoaxspE8hlWLE4r1IdZtovg/OyFgVRhxQbx47J4sqdLImN1hnM1lnwCj+/wLmqtqFk/RYMoZ5GAcwm/00g==",
-      "type": "package",
-      "path": "microsoft.aspnet.identity.core/2.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
-        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
-        "microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
-        "microsoft.aspnet.identity.core.nuspec"
-      ]
-    },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "sha512": "LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
       "type": "package",
@@ -205,7 +183,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Microsoft.AspNet.Identity.Core >= 2.2.3",
       "Swashbuckle.AspNetCore >= 5.0.0",
       "Swashbuckle.AspNetCore.Swagger >= 5.0.0"
     ]
@@ -251,10 +228,6 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
-          "Microsoft.AspNet.Identity.Core": {
-            "target": "Package",
-            "version": "[2.2.3, )"
-          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[5.0.0, )"
@@ -285,17 +258,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Identity.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

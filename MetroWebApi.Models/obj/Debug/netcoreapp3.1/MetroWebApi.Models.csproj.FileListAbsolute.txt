@@ -13,3 +13,4 @@ C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.AssemblyInfo.cs
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.dll
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.pdb
+C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Models\obj\Debug\netcoreapp3.1\MetroWebApi.Models.csprojAssemblyReference.cache

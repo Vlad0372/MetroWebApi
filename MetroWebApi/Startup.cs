@@ -1,25 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using MetroWebApi.Models;
 using MetroWebApi.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using System.IdentityModel.Tokens.Jwt;
 using MetroWebApi.Options;
-using MetroWebApi.Services.Services;
-using MetroWebApi.Services.Interfaces.IServices;
+using MetroWebApi.Services;
+using MetroWebApi.Services.Interfaces;
 
 namespace MetroWebApi
 {
@@ -35,7 +27,6 @@ namespace MetroWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             
-
             #region DBcontext
             services.AddDbContext<ApplicationContext>(options =>
                options.UseSqlServer(
@@ -50,8 +41,7 @@ namespace MetroWebApi
                     options.Password.RequireUppercase = false;
                 })
                 .AddEntityFrameworkStores<ApplicationContext>()
-                .AddDefaultTokenProviders()
-                .AddUserManager<UserManager<IdentityUser>>();
+                .AddDefaultTokenProviders();
             #endregion
 
             #region Jwt
@@ -80,24 +70,23 @@ namespace MetroWebApi
                 };
             });
             #endregion
+         
+            #region CustomSevices
 
-            services.AddCors();
-            
-            services.AddControllers();
-
-            #region AddHttpContexAccessorToServices
             services.AddHttpContextAccessor();
-
 
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IMetroUserService, MetroUserService>();
-            
-
+            services.AddTransient<IRailwayService, RailwayService>();
+            services.AddTransient<ITicketArchiveService, TicketArchiveService>();
 
             #endregion
 
-            services.AddSwaggerDocumentation();
-            
+            services.AddCors();
+
+            services.AddControllers();
+
+            services.AddSwaggerDocumentation();          
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
