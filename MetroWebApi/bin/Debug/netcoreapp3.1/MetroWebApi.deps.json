@@ -25,7 +25,6 @@
       "MetroWebApi/1.0.0": {
         "dependencies": {
           "MetroWebApi.Entities": "1.0.0",
-          "MetroWebApi.Migrations": "1.0.0",
           "MetroWebApi.Models.Dto": "1.0.0",
           "MetroWebApi.Options": "1.0.0",
           "MetroWebApi.Services": "1.0.0",
@@ -2798,18 +2797,6 @@
         },
         "compile": {
           "MetroWebApi.Entities.dll": {}
-        }
-      },
-      "MetroWebApi.Migrations/1.0.0": {
-        "dependencies": {
-          "MetroWebApi.Entities": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.1"
-        },
-        "runtime": {
-          "MetroWebApi.Migrations.dll": {}
-        },
-        "compile": {
-          "MetroWebApi.Migrations.dll": {}
         }
       },
       "MetroWebApi.Models/1.0.0": {
@@ -5831,11 +5818,6 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "MetroWebApi.Entities/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "MetroWebApi.Migrations/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

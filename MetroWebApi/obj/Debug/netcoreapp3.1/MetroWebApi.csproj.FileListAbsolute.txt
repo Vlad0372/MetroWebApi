@@ -850,5 +850,3 @@ C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Metro
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.pdb
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.pdb
-C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Migrations.dll
-C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Migrations.pdb

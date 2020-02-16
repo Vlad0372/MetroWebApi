@@ -89,7 +89,7 @@ namespace MetroWebApi.Controllers
         {
             await _ticketArciveService.PostTicketAsync(ticket);
 
-            return CreatedAtAction(nameof(GetTicket), new { id = ticket.Id }, ticket);
+            return CreatedAtAction(nameof(GetTicket), new { ticketId = ticket.Id }, ticket);
         }
 
        

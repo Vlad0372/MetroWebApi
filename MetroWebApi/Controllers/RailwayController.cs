@@ -52,7 +52,7 @@ namespace MetroWebApi.Controllers
         {
             await _railwayService.PostRailwayAsync(railway);
 
-            return CreatedAtAction(nameof(GetRailway), new { id = railway.Id }, railway);
+            return CreatedAtAction(nameof(GetRailway), new { railwayId = railway.Id }, railway);
         }
 
         [HttpPut("{railwayId}")]
