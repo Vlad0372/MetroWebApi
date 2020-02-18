@@ -26,9 +26,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _metroUserService.GetMyTicketArchiveAsync());
+                var result = await _metroUserService.GetMyTicketArchiveAsync();
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return NotFound("Error: " + ex.Message);
             }
@@ -39,9 +40,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _metroUserService.GetAllRailwaysAsync());
+                var result = await _metroUserService.GetAllRailwaysAsync();
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return NotFound("Error: " + ex.Message);
             }
@@ -52,9 +54,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _metroUserService.BuyTicketAsync(railwayId));
+                var result = await _metroUserService.BuyTicketAsync(railwayId);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return NotFound("Error: " + ex.Message);
             }
@@ -65,9 +68,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok (_metroUserService.GetAllRailways(startPoint, endPoint));
+                var result = _metroUserService.GetAllRailways(startPoint, endPoint);
+                return Ok (result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return NotFound("Error: " + ex.Message);
             }
@@ -78,9 +82,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _metroUserService.GetTicketAsync(ticketId));
+                var result = await _metroUserService.GetTicketAsync(ticketId);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return NotFound("Error: " + ex.Message);
             }

@@ -26,9 +26,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _railwayService.GetAllRailwaysAsync());
+                var result = await _railwayService.GetAllRailwaysAsync();
+                return Ok(result);
             }
-            catch(ArgumentException ex)
+            catch(Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -39,9 +40,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _railwayService.GetRailwayAsync(railwayId));
+                var result = await _railwayService.GetRailwayAsync(railwayId);
+                return Ok(result);
             }
-            catch(ArgumentException ex)
+            catch(Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -60,9 +62,10 @@ namespace MetroWebApi.Controllers
         {        
             try
             {
-                return Ok(await _railwayService.PutRailwayAsync(railwayId, railway));
+                var result = await _railwayService.PutRailwayAsync(railwayId, railway);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -73,9 +76,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _railwayService.DeleteRailwayAsync(railwayId));
+                var result = await _railwayService.DeleteRailwayAsync(railwayId);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }

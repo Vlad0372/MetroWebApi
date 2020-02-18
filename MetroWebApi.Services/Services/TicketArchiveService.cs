@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MetroWebApi.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Authorization;
 using MetroWebApi.Entities;
 using MetroWebApi.Services.Interfaces;
-using MetroWebApi.Models.Dto;
 
 namespace MetroWebApi.Services
 {
@@ -32,7 +27,7 @@ namespace MetroWebApi.Services
 
             if (ticketList.Count() == 0)
             {
-                throw new ArgumentException("no tickets yet.");
+                throw new Exception("no tickets yet.");
             }
 
             return ticketList;
@@ -44,14 +39,14 @@ namespace MetroWebApi.Services
             
             if (user == null)
             {
-                throw new ArgumentException("user with this Id does not exist.");
+                throw new Exception("user with this Id does not exist.");
             }
 
             var query = from ticket in _context.TicketArchives
                         where ticket.OwnerId == user.Id
                         select ticket;
 
-            return query.ToList();
+            return query;
         }
 
         public async Task<TicketArchive> GetTicketAsync(int ticketId)
@@ -60,7 +55,7 @@ namespace MetroWebApi.Services
 
             if (ticket == null)
             {
-                throw new ArgumentException("ticket with this Id does not exist.");
+                throw new Exception("ticket with this Id does not exist.");
             }
 
             return ticket;
@@ -76,10 +71,10 @@ namespace MetroWebApi.Services
         {
             if (ticketId != ticketArchive.Id)
             {
-                throw new ArgumentException("ticketId is not equal to ticketArchive Id.");
+                throw new Exception("ticketId is not equal to ticketArchive Id.");
             }
 
-            _context.Entry(ticketArchive).State = EntityState.Modified;
+            //_context.Entry(ticketArchive).State = EntityState.Modified;
 
             try
             {
@@ -89,7 +84,7 @@ namespace MetroWebApi.Services
             {
                 if (! _context.TicketArchives.Any(e => e.Id == ticketId))
                 {
-                    throw new ArgumentException("ticket with this Id does not exist.");
+                    throw new Exception("ticket with this Id does not exist.");
                 }
                 else
                 {
@@ -105,7 +100,7 @@ namespace MetroWebApi.Services
 
             if (ticket == null)
             {
-                throw new ArgumentException("ticket with this Id not exist.");
+                throw new Exception("ticket with this Id not exist.");
             }
 
             _context.TicketArchives.Remove(ticket);
@@ -119,7 +114,7 @@ namespace MetroWebApi.Services
 
             if (user == null)
             {
-                throw new ArgumentException("user with this id does not exist.");
+                throw new Exception("user with this id does not exist.");
             }
 
             var allTickets = _context.TicketArchives.Where(t => t.OwnerId == user.Id);
@@ -128,7 +123,7 @@ namespace MetroWebApi.Services
 
             if (allTickets == null)
             {
-                throw new ArgumentException("this user ticket archive is empty.");
+                throw new Exception("this user ticket archive is empty.");
             }
 
             return allTickets;

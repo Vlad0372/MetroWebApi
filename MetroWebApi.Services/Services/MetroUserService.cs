@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using MetroWebApi.Models;
 using MetroWebApi.Services.Interfaces;
@@ -32,17 +31,17 @@ namespace MetroWebApi.Services
 
             if (railway == null)
             {
-                throw new ArgumentException("railway with this ID does not exist.");
+                throw new Exception("railway with this ID does not exist.");
             }
             if (railway.FreePlacesAmount > 0)
             {
                 railway.FreePlacesAmount = railway.FreePlacesAmount - 1;
-                _context.Entry(railway).State = EntityState.Modified;
+                //_context.Entry(railway).State = EntityState.Modified;
 
                 var currentId = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type == "id")?.Value;
                 var currentUser = await _userManager.FindByIdAsync(currentId);
 
-                TicketArchive newTicketArchive = new TicketArchive
+                var newTicketArchive = new TicketArchive
                 {
                     OwnerId = currentUser.Id,
                     StartPoint = railway.StartPoint,
@@ -54,7 +53,7 @@ namespace MetroWebApi.Services
                 return newTicketArchive;
             }
 
-            throw new ArgumentException("no more tickets.");
+            throw new Exception("no more tickets.");
         }
 
         public async Task<IEnumerable<Railway>> GetAllRailwaysAsync()
@@ -63,7 +62,7 @@ namespace MetroWebApi.Services
 
             if (railwayList.Count() == 0)
             {
-                throw new ArgumentException("no railways yet.");
+                throw new Exception("no railways yet.");
             }
             return railwayList;
         }
@@ -76,10 +75,10 @@ namespace MetroWebApi.Services
 
             if (query.Count() == 0)
             {
-                throw new ArgumentException("no railways on this route.");
+                throw new Exception("no railways on this route.");
             }
 
-            return query.ToList();
+            return query;
         }
 
         public async Task<IEnumerable<TicketArchive>> GetMyTicketArchiveAsync()
@@ -93,10 +92,10 @@ namespace MetroWebApi.Services
 
             if (query.Count() == 0)
             {
-                throw new ArgumentException("ticket archive is empty.");
+                throw new Exception("ticket archive is empty.");
             }
 
-            return query.ToList();
+            return query;
 
         }
 
@@ -106,7 +105,7 @@ namespace MetroWebApi.Services
 
             if (ticketArchive == null)
             {
-                throw new ArgumentException("the ticket with this ID does not exist.");
+                throw new Exception("the ticket with this ID does not exist.");
             }
 
             return ticketArchive;

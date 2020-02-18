@@ -188,23 +188,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vladc\\.nuget\\packages\\": {},
+    "C:\\Users\\GnomE71\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
+      "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
       "projectName": "MetroWebApi.Options",
-      "projectPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
-      "packagesPath": "C:\\Users\\vladc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vladc\\Desktop\\MetroRepository\\MetroWebApi.Options\\obj\\",
+      "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
+      "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\vladc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

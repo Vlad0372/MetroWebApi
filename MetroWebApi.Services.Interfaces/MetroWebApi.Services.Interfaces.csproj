@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MetroWebApi.Models.Dto\MetroWebApi.Models.Dto.csproj" />
     <ProjectReference Include="..\MetroWebApi.Models\MetroWebApi.Models.csproj" />
   </ItemGroup>

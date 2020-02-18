@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using MetroWebApi.Entities;
 using MetroWebApi.Models;
@@ -27,7 +26,7 @@ namespace MetroWebApi.Services
 
             if (railwayList.Count() == 0)
             {
-                throw new ArgumentException("no railways yet.");
+                throw new Exception("no railways yet.");
             }
             return railwayList;
         }
@@ -38,7 +37,7 @@ namespace MetroWebApi.Services
 
             if (railway == null)
             {
-                throw new ArgumentException("railway with this Id not found.");
+                throw new Exception("railway with this Id not found.");
             }
 
             return railway;
@@ -54,7 +53,7 @@ namespace MetroWebApi.Services
         {
             if (railwayId != railway.Id)
             {
-                throw new ArgumentException("Id is not equal to railway Id.");
+                throw new Exception("Id is not equal to railway Id.");
             }
 
             _context.Entry(railway).State = EntityState.Modified;
@@ -67,7 +66,7 @@ namespace MetroWebApi.Services
             {
                 if (!_context.Railways.Any(e => e.Id == railwayId))
                 {
-                    throw new ArgumentException("this railway is not exist.");
+                    throw new Exception("this railway is not exist.");
                 }
                 else
                 {
@@ -84,7 +83,7 @@ namespace MetroWebApi.Services
 
             if (railway == null)
             {
-                throw new ArgumentException("railway with this Id not found.");
+                throw new Exception("railway with this Id not found.");
             }
 
             _context.Railways.Remove(railway);

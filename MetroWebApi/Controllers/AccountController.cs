@@ -3,14 +3,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MetroWebApi.Models.Dto;
 using MetroWebApi.Services.Interfaces;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace MetroWebApi.Controllers
 {
     [Route("[controller]/[action]")]
-    public class AccountController : Controller
-    {
-        
+    public class AccountController : ControllerBase
+    {        
         private readonly IAccountService _accountService;
 
         public AccountController(IAccountService accountService)
@@ -23,9 +22,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _accountService.RegisterAsync(request));
+                var result = await _accountService.RegisterAsync(request);
+                return Ok(result);
             }
-            catch(ArgumentException ex)
+            catch(Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -36,12 +36,14 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _accountService.LoginAsync(request));
+                var result = await _accountService.LoginAsync(request);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
-        }      
+        }
+
     }
 }

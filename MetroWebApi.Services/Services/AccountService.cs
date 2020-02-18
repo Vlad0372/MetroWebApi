@@ -29,7 +29,7 @@ namespace MetroWebApi.Services
 
             if (existingUser != null)
             {
-                throw new ArgumentException("user with this email already exist.");
+                throw new Exception("user with this email already exist.");
             }
 
             var newUser = new IdentityUser
@@ -44,7 +44,7 @@ namespace MetroWebApi.Services
 
             if (!createdUser.Succeeded)
             {
-                throw new ArgumentException("user did not created, unknown error.");
+                throw new Exception("user did not created, unknown error.");
             }
 
             string token = await GenerateJwtTokenAsync(newUser);
@@ -58,7 +58,7 @@ namespace MetroWebApi.Services
 
             if (existingUser == null)
             {
-                throw new ArgumentException("user does not exist.");
+                throw new Exception("user does not exist.");
             }
 
 
@@ -66,7 +66,7 @@ namespace MetroWebApi.Services
 
             if (!userHasValidPassword)
             {
-                throw new ArgumentException("wrong login or(and) password.");
+                throw new Exception("wrong login or(and) password.");
             }
 
             string token = await GenerateJwtTokenAsync(existingUser);

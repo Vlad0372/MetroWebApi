@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MetroWebApi.Models;
-using MetroWebApi.Controllers;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Authorization;
-using MetroWebApi.Entities;
 using MetroWebApi.Services.Interfaces;
-using MetroWebApi.Models.Dto;
 
 
 
@@ -35,9 +27,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _ticketArciveService.GetAllTicketsAsync());
+                var result = await _ticketArciveService.GetAllTicketsAsync();
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -48,9 +41,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _ticketArciveService.GetAllTicketsAsync(userId));
+                var result = await _ticketArciveService.GetAllTicketsAsync(userId);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -61,9 +55,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _ticketArciveService.GetTicketAsync(ticketId));
+                var result = await _ticketArciveService.GetTicketAsync(ticketId);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -75,9 +70,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _ticketArciveService.PutTicketAsync(ticketId, ticket));
+                var result = await _ticketArciveService.PutTicketAsync(ticketId, ticket);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
@@ -98,9 +94,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _ticketArciveService.DeleteTicketAsync(ticketId));
+                var result = await _ticketArciveService.DeleteTicketAsync(ticketId);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }           
@@ -111,9 +108,10 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                return Ok(await _ticketArciveService.DeleteAllTicketsAsync(userId));
+                var result = await _ticketArciveService.DeleteAllTicketsAsync(userId);
+                return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 return BadRequest("Error: " + ex.Message);
             }
