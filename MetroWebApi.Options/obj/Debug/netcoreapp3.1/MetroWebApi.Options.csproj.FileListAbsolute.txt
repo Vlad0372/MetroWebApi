@@ -9,3 +9,8 @@ C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Options\bin\Debug\netcoreapp3
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.dll
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.deps.json
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.pdb

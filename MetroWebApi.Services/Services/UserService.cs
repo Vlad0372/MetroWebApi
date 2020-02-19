@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MetroWebApi.Models.Dto;
 
-namespace MetroWebApi.Services.Services
+namespace MetroWebApi.Services
 {
     public class UserService : IUserService
     {
@@ -17,7 +17,7 @@ namespace MetroWebApi.Services.Services
         {
             _userManager = userManager;
         }
-        public async Task<IdentityUser> CreateUserAsync(RegisterDto user)
+        public async Task<IdentityUser> PostUserAsync(RegisterDto user)
         {
             var existingUser = await _userManager.FindByEmailAsync(user.Email);
 
@@ -51,7 +51,7 @@ namespace MetroWebApi.Services.Services
             return existingUser;
         }
 
-        public async Task<IdentityUser> EditUserAsync(string userId, RegisterDto newData)
+        public async Task<IdentityUser> PutUserAsync(string userId, RegisterDto newData)
         {
             var existingUser = await _userManager.FindByIdAsync(userId);
 
@@ -60,11 +60,16 @@ namespace MetroWebApi.Services.Services
                 throw new Exception("user with this Id does not exist.");
             }
 
-            var newPassword = _userManager.PasswordHasher.HashPassword(existingUser, newData.Password);
-           
-            existingUser.Email = newData.Email;
-            existingUser.PasswordHash = newPassword;
-
+            if(newData.Email != "")
+            {
+                existingUser.Email = newData.Email;
+            }
+            if(newData.Password != "")
+            {
+                var newPassword = _userManager.PasswordHasher.HashPassword(existingUser, newData.Password);
+                existingUser.PasswordHash = newPassword;
+            }
+            
             var result = await _userManager.UpdateAsync(existingUser);
 
             if(!result.Succeeded)

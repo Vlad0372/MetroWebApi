@@ -79,6 +79,8 @@ namespace MetroWebApi
             services.AddTransient<IMetroUserService, MetroUserService>();
             services.AddTransient<IRailwayService, RailwayService>();
             services.AddTransient<ITicketArchiveService, TicketArchiveService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRolesService, RolesService>();
 
             #endregion
 

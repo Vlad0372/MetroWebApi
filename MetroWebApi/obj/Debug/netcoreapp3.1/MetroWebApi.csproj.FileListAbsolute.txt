@@ -850,3 +850,17 @@ C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Metro
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.pdb
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
 C:\Users\vladc\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Models.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Options.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Models.Dto.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Models.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll

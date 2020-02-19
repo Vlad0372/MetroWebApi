@@ -65,8 +65,8 @@ namespace MetroWebApi.Controllers
         }
 
 
-        [HttpPut("{ticketId},{ticket}")]
-        public async Task<IActionResult> PutTicket(int ticketId, TicketArchive ticket)
+        [HttpPut("{ticketId}")]
+        public async Task<IActionResult> PutTicket(int ticketId, [FromBody]TicketArchive ticket)
         {
             try
             {

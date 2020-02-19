@@ -25,7 +25,7 @@ namespace MetroWebApi.Controllers
         {
             try
             {
-                var result = await _userService.CreateUserAsync(user);
+                var result = await _userService.PostUserAsync(user);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -48,12 +48,12 @@ namespace MetroWebApi.Controllers
             }
         }
 
-        [HttpPut("{userId}, {newData}")]
-        public async Task<ActionResult<IdentityUser>> PutUser(string userId, RegisterDto newData)
+        [HttpPut("{userId}")]
+        public async Task<ActionResult<IdentityUser>> PutUser(string userId, [FromBody] RegisterDto newData)
         {
             try
             {
-                var result = await _userService.EditUserAsync(userId, newData);
+                var result = await _userService.PutUserAsync(userId, newData);
                 return Ok(result);
             }
             catch (Exception ex)
