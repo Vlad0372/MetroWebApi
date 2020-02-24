@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MetroWebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using MetroWebApi.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -34,6 +33,7 @@ namespace MetroWebApi.Controllers
                 return NotFound("Error: " + ex.Message);
             }
         }
+
         [HttpGet("{userId}")]
         public async Task<ActionResult<IList<string>>> GetUserRoles(string userId)
         {
@@ -61,6 +61,7 @@ namespace MetroWebApi.Controllers
                 return BadRequest("Error: " + ex.Message);
             }
         }
+
         [HttpPost("{roleId}, {userId}")]
         public async Task<ActionResult<object>> PostUserRole(string roleId, string userId)
         {
@@ -74,6 +75,7 @@ namespace MetroWebApi.Controllers
                 return BadRequest("Error: " + ex.Message);
             }
         }
+
         [HttpDelete("{roleId}")]
         public async Task<ActionResult<IdentityRole>> DeleteRole(string roleId)
         {
@@ -87,6 +89,7 @@ namespace MetroWebApi.Controllers
                 return NotFound("Error: " + ex.Message);
             }
         }
+
         [HttpDelete("{roleId}, {userId}")]
         public async Task<ActionResult<object>> DeleteUserRole(string roleId, string userId)
         {

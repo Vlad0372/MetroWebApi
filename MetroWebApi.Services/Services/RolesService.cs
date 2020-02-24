@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using MetroWebApi.Models.Dto;
 using MetroWebApi.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -81,6 +79,7 @@ namespace MetroWebApi.Services
             };
             return response;
         }
+     
         public async Task<IdentityRole> DeleteRoleAsync(string roleId)
         {
             var role = await _roleManager.FindByIdAsync(roleId);

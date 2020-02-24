@@ -108,6 +108,7 @@ namespace MetroWebApi.Services
 
             return ticket;
         }
+       
         public async Task<IEnumerable<TicketArchive>> DeleteAllTicketsAsync(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);

@@ -80,15 +80,25 @@ namespace MetroWebApi.Services
             return existingUser;
         }
 
-        public async Task<IEnumerable<IdentityUser>> GetAllUsersAsync()
+        public async Task<List<UserDto>> GetAllUsersAsync()
         {
             if(await _userManager.Users.CountAsync() == 0)
             {
                 throw new Exception("usersList is empty.");
             }
 
-            return await _userManager.Users.ToListAsync();
+            var usersList = await _userManager.Users.ToListAsync();
+
+            List<UserDto> usersDtoList = new List<UserDto>();
+
+            foreach(var u in usersList)
+            {
+                usersDtoList.Add(new UserDto(u.Id, u.Email, u.UserName));
+            }
+            
+            return usersDtoList;
         }
+
 
         public async Task<IdentityUser> GetUserAsync(string userId)
         {

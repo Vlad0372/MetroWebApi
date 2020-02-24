@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MetroWebApi.Controllers
 {
+    [AllowAnonymous]
     [Route("[controller]/[action]")]
     public class AccountController : ControllerBase
     {        
@@ -44,6 +45,5 @@ namespace MetroWebApi.Controllers
                 return BadRequest("Error: " + ex.Message);
             }
         }
-
     }
 }

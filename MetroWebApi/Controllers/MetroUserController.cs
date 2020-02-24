@@ -8,7 +8,7 @@ using MetroWebApi.Services.Interfaces;
 
 namespace MetroWebApi.Controllers
 {
-    [Authorize(Roles = "User, Admin")]
+    [Authorize(Roles = "User, Editor, Admin")]
     [Route("[controller]/[action]")]
     [ApiController]
     public class MetroUserController : ControllerBase

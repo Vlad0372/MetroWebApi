@@ -8,7 +8,7 @@ using MetroWebApi.Services.Interfaces;
 
 namespace MetroWebApi.Controllers
 {
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles="Admin, Editor")]
     [Route("[controller]/[action]")]
     [ApiController]
     public class RailwayController : ControllerBase
@@ -50,7 +50,7 @@ namespace MetroWebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Railway>> PostRailway(Railway railway)
+        public async Task<ActionResult<Railway>> PostRailway([FromBody] Railway railway)
         {
             await _railwayService.PostRailwayAsync(railway);
 

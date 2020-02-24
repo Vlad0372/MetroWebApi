@@ -10,7 +10,7 @@ using MetroWebApi.Services.Interfaces;
 
 namespace MetroWebApi.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Editor")]
     [Route("[controller]/[action]")]
     [ApiController]
     public class TicketArchiveController : ControllerBase
@@ -64,7 +64,6 @@ namespace MetroWebApi.Controllers
             }
         }
 
-
         [HttpPut("{ticketId}")]
         public async Task<IActionResult> PutTicket(int ticketId, [FromBody]TicketArchive ticket)
         {
@@ -79,16 +78,14 @@ namespace MetroWebApi.Controllers
             }
         }
 
-
         [HttpPost]
-        public async Task<ActionResult<TicketArchive>> PostTicket(TicketArchive ticket)
+        public async Task<ActionResult<TicketArchive>> PostTicket([FromBody]TicketArchive ticket)
         {
             await _ticketArciveService.PostTicketAsync(ticket);
 
             return CreatedAtAction(nameof(GetTicket), new { ticketId = ticket.Id }, ticket);
         }
-
-       
+     
         [HttpDelete("{ticketId}")]
         public async Task<ActionResult<TicketArchive>> DeleteTicket(int ticketId)
         {

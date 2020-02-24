@@ -9,10 +9,9 @@ using Microsoft.AspNetCore.Identity;
 using MetroWebApi.Models.Dto;
 
 namespace MetroWebApi.Controllers
-{
-    [Authorize(Roles = "Admin")]
+{   
     [Route("[controller]/[action]")]
-    public class UserController : ControllerBase
+    public class UserController : Controller
     {
         private readonly IUserService _userService;
         public UserController(IUserService userService)
@@ -20,8 +19,9 @@ namespace MetroWebApi.Controllers
             _userService = userService;
         }
 
-        [HttpPost("{user}")]
-        public async Task<ActionResult<IdentityUser>> PostUser(RegisterDto user)
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<ActionResult<IdentityUser>> PostUser([FromBody] RegisterDto user)
         {
             try
             {
@@ -34,6 +34,7 @@ namespace MetroWebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{userId}")]
         public async Task<ActionResult<IdentityUser>> DeleteUser(string userId)
         {
@@ -48,6 +49,7 @@ namespace MetroWebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{userId}")]
         public async Task<ActionResult<IdentityUser>> PutUser(string userId, [FromBody] RegisterDto newData)
         {
@@ -62,8 +64,9 @@ namespace MetroWebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin, Editor")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<IdentityUser>>> GetAllUsers()
+        public async Task<ActionResult<List<UserDto>>> GetAllUsers()
         {
             try
             {
@@ -76,6 +79,7 @@ namespace MetroWebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("{userId}")]
         public async Task<ActionResult<IdentityUser>> GetUser(string userId)
         {
@@ -89,6 +93,5 @@ namespace MetroWebApi.Controllers
                 return BadRequest("Error: " + ex.Message);
             }
         }
-
     }
 }

@@ -12,7 +12,7 @@ namespace MetroWebApi.Services.Interfaces
         Task<IdentityUser> PostUserAsync(RegisterDto user);
         Task<IdentityUser> PutUserAsync(string userId, RegisterDto newData);
         Task<IdentityUser> GetUserAsync(string userId);
-        Task<IEnumerable<IdentityUser>> GetAllUsersAsync();
+        Task<List<UserDto>> GetAllUsersAsync();
         Task<IdentityUser> DeleteUserAsync(string userId);
 
     }
