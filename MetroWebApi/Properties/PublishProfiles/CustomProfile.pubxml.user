@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfO1aA/6FAEqd+SNwEvaKpwAAAAACAAAAAAAQZgAAAAEAACAAAACHWf/tzUnFsyOlW5k1R4JBvxD7JGx669mKipKwe7eEkwAAAAAOgAAAAAIAACAAAACQnzHhvloeFZiePpYRRWtK2t9LaWP+Oy9Tg9OSbsb1qSAAAAAwBZ/DpMc7nvSYPf3Do/vFdExK/drad124ws2ia+Nz1UAAAACWMsUbSX+83PwkENa3xTN0M1hXDfTuGbPiG2jZIOVcu5ThO2zyTpVNCA52gRRz6Cz9LZ3i6KU+uBVpP4gOzLHd</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL5031.site4now.net%3bInitial Catalog=DB_A55A5B_MetroDb%3bUser Id=DB_A55A5B_MetroDb_admin%3bPassword=metro123pass%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MetroWebApi.Entities.ApplicationContext">
+      <Value>Data Source=SQL5031.site4now.net%3bInitial Catalog=DB_A55A5B_MetroDb%3bUser Id=DB_A55A5B_MetroDb_admin%3bPassword=metro123pass%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

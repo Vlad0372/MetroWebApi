@@ -1,0 +1,13 @@
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.deps.json
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Release\netcoreapp3.1\MetroWebApi.Models.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Release\netcoreapp3.1\MetroWebApi.Models.Dto.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Release\netcoreapp3.1\MetroWebApi.Models.Dto.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\bin\Release\netcoreapp3.1\MetroWebApi.Models.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.csprojAssemblyReference.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfoInputs.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.AssemblyInfo.cs
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.csproj.CopyComplete
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Services.Interfaces\obj\Release\netcoreapp3.1\MetroWebApi.Services.Interfaces.pdb

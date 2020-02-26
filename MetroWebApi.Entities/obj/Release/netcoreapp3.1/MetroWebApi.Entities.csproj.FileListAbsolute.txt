@@ -1,0 +1,11 @@
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\bin\Release\netcoreapp3.1\MetroWebApi.Entities.deps.json
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\bin\Release\netcoreapp3.1\MetroWebApi.Entities.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\bin\Release\netcoreapp3.1\MetroWebApi.Entities.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\bin\Release\netcoreapp3.1\MetroWebApi.Models.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\bin\Release\netcoreapp3.1\MetroWebApi.Models.pdb
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Release\netcoreapp3.1\MetroWebApi.Entities.csprojAssemblyReference.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Release\netcoreapp3.1\MetroWebApi.Entities.AssemblyInfoInputs.cache
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Release\netcoreapp3.1\MetroWebApi.Entities.AssemblyInfo.cs
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Release\netcoreapp3.1\MetroWebApi.Entities.csproj.CopyComplete
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Release\netcoreapp3.1\MetroWebApi.Entities.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Release\netcoreapp3.1\MetroWebApi.Entities.pdb

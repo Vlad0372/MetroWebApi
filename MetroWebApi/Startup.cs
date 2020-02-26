@@ -96,10 +96,10 @@ namespace MetroWebApi
            
             if (env.IsDevelopment())
             {
-                app.UseSwaggerDocumentation();
+                //app.UseSwaggerDocumentation();
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSwaggerDocumentation();
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()

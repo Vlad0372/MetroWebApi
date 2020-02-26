@@ -862,5 +862,4 @@ C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\Met
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.Interfaces.pdb
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Services.pdb
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\MetroWebApi.Models.pdb
-C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
-C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi\bin\Debug\netcoreapp3.1\System.Text.Json.dll
