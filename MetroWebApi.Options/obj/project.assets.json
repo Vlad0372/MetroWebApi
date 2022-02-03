@@ -188,23 +188,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GnomE71\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Vladislav\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
+      "projectUniqueName": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
       "projectName": "MetroWebApi.Options",
-      "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
-      "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\obj\\",
+      "projectPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
+      "packagesPath": "C:\\Users\\Vladislav\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Options\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vladislav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -216,6 +217,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -227,6 +229,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -252,7 +255,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

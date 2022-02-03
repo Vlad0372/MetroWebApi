@@ -6588,23 +6588,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GnomE71\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Vladislav\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
       "projectName": "MetroWebApi.Services",
-      "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
-      "packagesPath": "C:\\Users\\GnomE71\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services\\obj\\",
+      "projectPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Services\\MetroWebApi.Services.csproj",
+      "packagesPath": "C:\\Users\\Vladislav\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\GnomE71\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vladislav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6616,18 +6617,19 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj": {
-              "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj"
+            "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj": {
+              "projectPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Entities\\MetroWebApi.Entities.csproj"
             },
-            "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
-              "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj"
+            "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj": {
+              "projectPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Models.Dto\\MetroWebApi.Models.Dto.csproj"
             },
-            "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj": {
-              "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Options\\MetroWebApi.Options.csproj"
+            "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Options\\MetroWebApi.Options.csproj": {
+              "projectPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Options\\MetroWebApi.Options.csproj"
             },
-            "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\GnomE71\\Desktop\\MetroRepository\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj"
+            "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj": {
+              "projectPath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Services.Interfaces\\MetroWebApi.Services.Interfaces.csproj"
             }
           }
         }
@@ -6640,6 +6642,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": {
             "target": "Package",
@@ -6665,7 +6668,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

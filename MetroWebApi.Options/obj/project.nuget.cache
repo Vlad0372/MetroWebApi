@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bxn5mF77Vl66VmNmEDsfIDm2X1Qi4EYiJZOE6ZA36uNhEhYjfqZ/GJjTJktTvt3XSjQ8mO87WJuPZU0pBmZJiQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Vladislav\\Source\\Repos\\MetroWebApi\\MetroWebApi.Options\\MetroWebApi.Options.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vladislav\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Vladislav\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\Vladislav\\.nuget\\packages\\swashbuckle.aspnetcore\\5.0.0\\swashbuckle.aspnetcore.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vladislav\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.0.0\\swashbuckle.aspnetcore.swagger.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vladislav\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.0.0\\swashbuckle.aspnetcore.swaggergen.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vladislav\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.0.0\\swashbuckle.aspnetcore.swaggerui.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

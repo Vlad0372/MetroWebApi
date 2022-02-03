@@ -20,3 +20,16 @@ C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\bin\Debug\netcorea
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.csproj.CopyComplete
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.dll
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.pdb
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.deps.json
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.dll
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\bin\Debug\netcoreapp3.1\MetroWebApi.Entities.pdb
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\bin\Debug\netcoreapp3.1\MetroWebApi.Models.dll
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\bin\Debug\netcoreapp3.1\MetroWebApi.Models.pdb
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.csproj.AssemblyReference.cache
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.AssemblyInfoInputs.cache
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.AssemblyInfo.cs
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.csproj.CopyComplete
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.dll
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Entities\obj\Debug\netcoreapp3.1\MetroWebApi.Entities.pdb

@@ -14,3 +14,13 @@ C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\bin\Debug\netcoreap
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.dll
 C:\Users\GnomE71\Desktop\MetroRepository\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.deps.json
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.dll
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\bin\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.csproj.AssemblyReference.cache
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.AssemblyInfoInputs.cache
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.AssemblyInfo.cs
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.dll
+C:\Users\Vladislav\Source\Repos\MetroWebApi\MetroWebApi.Options\obj\Debug\netcoreapp3.1\MetroWebApi.Options.pdb
